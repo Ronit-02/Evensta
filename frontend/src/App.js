@@ -12,7 +12,7 @@ import { useState } from "react";
 
 function App() {
 
-  const [user, setUser] = useState(false);
+  const [user, setUser] = useState(true);
 
   const toggleUser = () => {
     setUser((prevState) => !prevState)
@@ -24,21 +24,21 @@ function App() {
       {
         user
           ?
-          <div className="bg-black h-screen">
-            <Navbar />
+          <div className="bg-black">
+            <Navbar toggleUser={toggleUser} />
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/newEvent" element={<NewEvent />} />
-              <Route path="/event/:id" element={<Event />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/about" element={<About />} />
-              <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/event/:id" element={<Event />} />
+              <Route path="/dashboard/:id" element={<Dashboard />} />
+              <Route path="/newEvent/:id" element={<NewEvent />} />
             </Routes>
           </div>
           :
           <div className="bg-gray-900 h-screen">
             <Routes>
-            <Route path="/" element={ <Login />} />
+            <Route path="/" element={ <Login toggleUser={toggleUser} />} />
             <Route path="/register" element={ <Register />} />
             </Routes>       
           </div> 

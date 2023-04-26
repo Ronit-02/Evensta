@@ -6,10 +6,8 @@ import {CiSearch} from 'react-icons/ci'
 
 export default function Hero() {
   return (
-    <div>
-
+    <div className='container'>
       <h1 className="text-lg text-white text-xl my-8 ml-16">Explore events</h1>
-
       {/* Search Bar */}
 
       <form action="" className="relative w-80 ml-16">
@@ -23,22 +21,24 @@ export default function Hero() {
       </form>
 
       {/* Cards */}
-
-      <div className='container flex flex-row p-16'>
-
-        {events.map((event) => {
-          return (
-            <Link to={`event/${event.id}`} key={event.id}>
-              < Card
-                imageUrl={event.imageUrl}
-                category={event.category}
-                title={event.title}
-                date={event.date}
-                month={event.month}
-              />
-            </Link>
-          )
-        })}
+      <div className="flex items-center justify-between">
+        <div className='container flex flex-row flex-wrap p-16'>
+          <img src="../../" alt="" />
+          {events.map((event) => {
+            return (
+              <Link to={`event/${event.id}`} key={event.id}>
+                < Card
+                  // imageUrl={`../images/${event.imageUrl}.jpg`}
+                  imageUrl={event.imageUrl}
+                  category={event.category}
+                  title={event.title}
+                  date={event.date}
+                  month={event.month}
+                />
+              </Link>
+            )
+          })}
+        </div>
 
       </div>
     </div>

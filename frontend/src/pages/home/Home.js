@@ -3,7 +3,7 @@ import Hero from './Hero'
 
 export default function Home() {
   return (
-    <div >
+    <div className='bg-black min-h-screen'>
       <Hero />
     </div>
   )

@@ -2,14 +2,14 @@ import React from 'react'
 
 export default function Card({imageUrl, category, title, date, month}) {
   return (
-    <div className='container relative w-96 mr-14'>
+    <div className='container relative w-96 mr-14 mt-4'>
         {/* Image */}
         <img src={imageUrl} alt="event" className="w-full rounded-3xl object-cover" />
 
         {/* Details */}
-        <div className="container absolute bottom-8 left-4 w-full flex flex-col">
-            <h1 className='text-red-200 uppercase'>{category}</h1>
-            <p className='text-white capitalize'>{title}</p>
+        <div className="container absolute bottom-8 left-4 w-full">
+            <h1 className='block text-gray-400 tracking-widest uppercase'>{category}</h1>
+            <p className='text-white font-bold text-xl tracking-wide capitalize'>{title}</p>
         </div>
 
         {/* Time */}
